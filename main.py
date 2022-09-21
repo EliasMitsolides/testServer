@@ -14,9 +14,14 @@ app = Flask(__name__)
 KIRYU_IMAGE_PATH = os.path.join('static', 'BigKiryu.png')
 app.config['BigKiyru'] = KIRYU_IMAGE_PATH
 # app.route is what Flask uses to map URLs to functions
+# one standard is for index.html to serve as the landing page
+#   the code on the bottom serves to make this the landing table of contents
+#   so to speak, as we've different app.routes for different displays for diff pages
+#   and this one will serve as the default as per the route("/") and running this main.py file
+# the standard otherwise is for the default document from a document root directory to be loaded
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World@@@@@@@@@@@@@!</p>"
+    return "<p>This is the landing page. Nothing special. Trying adding '/Kiryu' to the URL for a bootstrap page.</p>"
 
 
 @app.route("/byebye")
